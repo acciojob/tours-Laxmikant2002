@@ -34,7 +34,7 @@ const App = () => {
 
   if (loading) {
     return (
-      <main>
+      <main id="main">
         <Loading />
       </main>
     );
@@ -42,7 +42,7 @@ const App = () => {
 
   if (error) {
     return (
-      <main>
+      <main id="main">
         <div className="title">
           <h2>Failed to load tours. Please try again later.</h2>
         </div>
@@ -52,7 +52,7 @@ const App = () => {
 
   if (tours.length === 0) {
     return (
-      <main>
+      <main id="main">
         <div className="title">
           <h2>No tours left</h2>
           <button className="btn" onClick={fetchTours}>
@@ -64,7 +64,7 @@ const App = () => {
   }
 
   return (
-    <main>
+    <main id="main">
       <div className="title">
         <h1>Tours</h1>
         <div className="underline"></div>

@@ -3,7 +3,7 @@ import Tour from "./Tour";
 
 const Tours = ({ tours, removeTour }) => {
     return (
-        <section>
+        <section className="tours">
             {tours.map((tour) => (
                 <Tour key={tour.id} {...tour} removeTour={removeTour} />
             ))}

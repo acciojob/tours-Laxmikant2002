@@ -13,13 +13,16 @@ const Tour = ({ id, image, name, price, info, removeTour }) => {
                     <h4 className="tour-price">${price}</h4>
                 </div>
                 <p>
-                    {showMore ? info : `${info.substring(0, 200)}...`}
-                    <button
-                        aria-label={showMore ? "Collapse tour description" : "Expand tour description"}
-                        onClick={() => setShowMore(!showMore)}
-                    >
-                        {showMore ? "See Less" : "Show More"}
-                    </button>
+                    {showMore ? info : `${info.substring(0, 200)}${info.length > 200 ? '...' : ''}`}
+                    {info.length > 200 && (
+                        <button
+                            className="show-more-btn"
+                            aria-label={showMore ? "Collapse tour description" : "Expand tour description"}
+                            onClick={() => setShowMore(!showMore)}
+                        >
+                            {showMore ? "See Less" : "Show More"}
+                        </button>
+                    )}
                 </p>
                 <button
                     className="delete-btn"
